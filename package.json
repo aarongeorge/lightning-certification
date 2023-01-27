@@ -1,0 +1,7 @@
+{
+  "name": "au.com.fetchtv.upcomin-releases",
+  "description": "upcoming-releases",
+  "dependencies": {
+    "@lightningjs/sdk": "^5.2.0"
+  }
+}

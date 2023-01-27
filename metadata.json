@@ -1,0 +1,6 @@
+{
+  "name": "upcoming-releases",
+  "identifier": "au.com.fetchtv.upcomin-releases",
+  "version": "1.0.0",
+  "icon": "./static/icon.png"
+}
