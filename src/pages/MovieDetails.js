@@ -76,7 +76,7 @@ export class MovieDetails extends Lightning.Component {
 	_enable () {
 		this.patch({
 			Title: { text: { text: this.details.title } },
-			Release: { text: { text: this.details.release_date.split('-')[0] }},
+			Release: { text: { text: this.details.release_date }},
 			Overview: { text: { text: this.details.overview }},
 			Poster: { src: getImagePath(this.details, 3) }
 		})
