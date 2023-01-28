@@ -8,7 +8,7 @@ export class Image extends Lightning.Component {
 		return {
 			w: DEFAULT_IMAGE_WIDTH,
 			h: DEFAULT_IMAGE_HEIGHT,
-			Fallback: { rect: true, color: 0xffff00ff, w: w => w, h: h => h },
+			Fallback: { rect: true, color: 0xff6b7280, w: w => w, h: h => h },
 			Image: { w: w => w, h: h => h, src: this.bindProp('src') }
 		}
 	}

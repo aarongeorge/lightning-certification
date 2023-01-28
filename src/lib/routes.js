@@ -17,7 +17,7 @@ export default {
 		{
 			path: 'movie/upcoming',
 			component: UpcomingMovies,
-			on: async (page) => {
+			before: async (page) => {
 				page.upcomingMovies = await getUpcomingMovies()
 			},
 			cache: 60 * 10
@@ -25,10 +25,13 @@ export default {
 		{
 			path: 'movie/:id',
 			component: MovieDetails,
-			on: async (page, { id }) => {
-        		page.similars = await getSimilarMovies(id)
-        		page.details = await getMovieDetails(id)
+			before: async (page, { id }) => {
+				page.similars = await getSimilarMovies(id)
+				page.details = await getMovieDetails(id)
 			},
+			options: {
+				reuseInstance: false,
+			  },
 			cache: 60 * 10
 		}
 	]

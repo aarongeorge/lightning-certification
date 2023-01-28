@@ -8,31 +8,26 @@ export class Splash extends Lightning.Component {
 				rect: true,
 				w: 1920,
 				h: 1080,
-				color: 0xfff37153,
+				color: 0xfff3f4f6,
 			},
 			Title: {
 				x: 960,
-				y: 50,
+				y: 1080/2,
 				mount: 0.5,
 				text: {
-					text: 'Splash',
+					text: 'TMDB Lightning Client Demo',
 					fontFace: 'Regular',
 					fontSize: 64,
-					textColor: 0xffffffff
+					textColor: 0xff111827
 				}
-			},
-			Logo: {
-				x: 960,
-				y: 540,
-				mount: 0.5,
-				src: Utils.asset('images/logo.png')
 			},
 			Label: {
 				x: 960,
 				y: 1000,
 				mount: 0.5,
 				text: {
-					text: '[ press enter to continue ]'
+					text: '[ press enter to continue ]',
+					textColor: 0xff6b7280
 				}
 			}
 		}
@@ -40,5 +35,9 @@ export class Splash extends Lightning.Component {
 
 	_handleEnter () {
 		Router.navigate('movie/upcoming')
+	}
+
+	pageTransition () {
+		return 'crossfade'
 	}
 }

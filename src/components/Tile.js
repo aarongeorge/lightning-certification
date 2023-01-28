@@ -7,17 +7,31 @@ export const TILE_HEIGHT = 270
 export class Tile extends Lightning.Component {
 	static _template () {
 		return {
-			rect: true, color: 0xff00ff00,
-			alpha: 0.5,
-			w: TILE_WIDTH, h: TILE_HEIGHT,
+			alpha: 0.7,
 			Image: {
 				type: Image,
 				src: this.bindProp('src'),
-				w: w => w, h: h => h
+				w: TILE_WIDTH, h: TILE_HEIGHT,
+				shader: {
+					type: Lightning.shaders.RoundedRectangle,
+					radius: 8
+				},
 			},
 			Title: {
+				color: 0xff000000,
+				y: TILE_HEIGHT,
 				text: {
-					// text: this.bindProp('title') ?? 'Title'
+					textOverflow: 'ellipsis',
+					wordWrapWidth: TILE_WIDTH,
+					wordWrap: false,
+					text: this.bindProp('title') ?? 'Title',
+				}
+			},
+			Release: {
+				color: 0xff6b7280,
+				y: TILE_HEIGHT + 40,
+				text: {
+					text: this.bindProp('releaseDate') ?? 'Release Date'
 				}
 			}
 		}
@@ -28,7 +42,7 @@ export class Tile extends Lightning.Component {
 	}
 
 	_unfocus () {
-		this.patch({ alpha: 0.5 })
+		this.patch({ alpha: 0.7 })
 	}
 
 	_handleEnter () {
