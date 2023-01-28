@@ -17,7 +17,9 @@ npm install -g @lightningjs/cli
 
 2. Build the App using the _Lightning-CLI_ by running `lng build` inside the root of your project
 
-3. Fire up a local webserver and open the App in a browser by running `lng serve` inside the root of your project
+3. Copy .env.example to .env and edit to provide APP_API_KEY for The Movie Database API
+
+4. Fire up a local webserver and open the App in a browser by running `lng serve` inside the root of your project
 
 #### Developing the App
 
